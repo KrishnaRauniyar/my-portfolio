@@ -1,0 +1,155 @@
+@use 'variables' as *;
+
+.about-section {
+  background-color: $light-color;
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+
+    @media (max-width: 992px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .about-left {
+    h3 {
+      font-size: 1.8rem;
+      color: $secondary-color;
+    }
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .about-right {
+    h3 {
+      font-size: 1.8rem;
+      color: $secondary-color;
+    }
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .about-profile {
+    h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      color: $secondary-color;
+    }
+
+    p {
+      margin-bottom: 2rem;
+      line-height: 1.8;
+    }
+  }
+
+  .personal-info {
+    margin-top: 2.5rem;
+
+    h4 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      color: $secondary-color;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+
+        svg {
+          color: $primary-color;
+          margin-right: 1rem;
+          width: 1.2rem;
+        }
+      }
+    }
+  }
+
+  .timeline {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 3rem;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 2px;
+      background: $primary-color;
+    }
+
+    &-item {
+      position: relative;
+      padding-bottom: 2rem;
+      margin-bottom: 2rem;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: -2.4rem;
+        top: 0.3rem;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        background: $primary-color;
+        border: 3px solid $light-color;
+      }
+
+      h4 {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+      }
+
+      h5 {
+        font-size: 1rem;
+        margin-bottom: 0.8rem;
+        color: $primary-color;
+        font-weight: 500;
+      }
+
+      p {
+        color: darken($light-color, 60%);
+      }
+    }
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 3rem;
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      background: $primary-color;
+      color: white;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: darken($primary-color, 10%);
+        transform: translateY(-3px);
+      }
+
+      svg {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 600px) { @content };
+  }
+  @if $breakpoint == tab-port {
+    @media (max-width: 900px) { @content };
+  }
+  @if $breakpoint == tab-land {
+    @media (max-width: 1200px) { @content };
+  }
+  @if $breakpoint == big-desktop {
+    @media (min-width: 1800px) { @content };
+  }
+}
+
+@mixin section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  color: $secondary-color;
+  position: relative;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 5rem;
+    height: 0.25rem;
+    background: $primary-color;
+    margin: 1rem auto 0;
+  }
+}
