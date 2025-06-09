@@ -1,3 +1,4 @@
+@use 'sass:color';
 @use 'variables' as *;
 
 .publications-section {
@@ -37,14 +38,14 @@
 
     .publication-conference {
       font-size: 1rem;
-      color: darken($light-color, 60%);
+      color: color.adjust($light-color, $lightness: -60%);
       margin-bottom: 1rem;
     }
 
     .publication-authors {
       font-size: 1rem;
       font-style: italic;
-      color: darken($light-color, 60%);
+      color: color.adjust($light-color, $lightness: -60%);
     }
 
     .publication-link {
@@ -54,7 +55,7 @@
       transition: color 0.3s;
 
       &:hover {
-        color: darken($primary-color, 10%);
+        color: color.adjust($primary-color, $lightness: -10%);
       }
     }
   }

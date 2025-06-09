@@ -1,9 +1,10 @@
+@use 'sass:color';
 @use 'variables' as *;
 
 .projects-section {
   background-color: white;
 
-    .section-title {
+  .section-title {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 2rem;
@@ -15,7 +16,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 2rem;
-    
+
     @media (max-width: 768px) {
       grid-template-columns: 1fr;
     }
@@ -39,7 +40,7 @@
   .project-image {
     height: 200px;
     overflow: hidden;
-    
+
     img {
       width: 100%;
       height: 100%;
@@ -66,7 +67,7 @@
 
     p {
       margin-bottom: 1.5rem;
-      color: darken($light-color, 60%);
+      color: color.adjust($light-color, $lightness: -60%);
       flex-grow: 1;
     }
   }
@@ -78,7 +79,7 @@
     margin-bottom: 1.5rem;
 
     span {
-      background: lighten($primary-color, 40%);
+      background: color.adjust($primary-color, $lightness: 40%);
       padding: 0.3rem 0.8rem;
       border-radius: 1rem;
       font-size: 0.8rem;

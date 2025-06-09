@@ -1,3 +1,4 @@
+@use 'sass:color';
 @use 'variables' as *;
 
 .hero {
@@ -40,7 +41,7 @@
       font-size: 1.1rem;
       line-height: 1.8;
       margin-bottom: 2rem;
-      color: darken($light-color, 50%);
+      color: color.adjust($light-color, $lightness: -50%);
     }
   }
 
@@ -52,18 +53,16 @@
       width: 350px;
       height: 350px;
       border-radius: 50%;
-      // border: 8px solid white;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
       overflow: hidden;
       margin: 0 auto;
       position: relative;
       background: linear-gradient(135deg, $light-color 0%, #c3cfe2 100%);
-      
+
       &::before {
         content: '';
         position: absolute;
         inset: 0;
-        // background: linear-gradient(135deg, rgba($primary-color, 0.1) 0%, rgba($primary-color, 0.3) 100%);
         z-index: 1;
       }
     }
@@ -93,7 +92,7 @@
 
     &-image {
       order: 1;
-      
+
       .profile-circle {
         width: 250px;
         height: 250px;
